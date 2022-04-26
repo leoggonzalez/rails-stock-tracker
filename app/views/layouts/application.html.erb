@@ -11,6 +11,13 @@
   </head>
 
   <body>
+    <% flash.each do |type, msg| %>
+      <% if type == "notice" %>
+        <p class="notice"><%= notice %></p>
+      <% elsif type == "alert" %>
+        <p class="alert"><%= alert %></p>
+      <% end %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
